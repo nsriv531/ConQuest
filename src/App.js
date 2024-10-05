@@ -1,30 +1,32 @@
 import logo from './logo.svg';
 import './App.css';
-import LoginForm from './Forms/LoginForm';  // Adjust the path based on your folder structure
+import mountain from './Images/mountain.png';
+
 
 function App() {
-  return (
+  // return (
+  //   <div className="App">
+  //     <header className="App-header">
+  //       <img src={logo} className="App-logo" alt="logo" />
+  //       <p>
+  //         Edit <code>src/App.js</code> and save to reload.
+  //       </p>
+  //       <a
+  //         className="App-link"
+  //         href="https://reactjs.org"
+  //         target="_blank"
+  //         rel="noopener noreferrer"
+  //       >
+  //         Learn React
+  //       </a>
+  //     </header>
+  //   </div>
+  // );
+  return(
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-
-      {/* Add the LoginForm component here */}
-      <div className="App-body">
-      </div>
-    </div>
-  );
+    <img src={mountain} className="full-page-image" alt="background" />
+  </div>
+  )
 }
 
 export default App;
