@@ -1,5 +1,7 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./Forms/LoginForm";
+import "./App.css";
+import LoginForm from "./Forms/LoginForm";
 
 function App() {
   return (
@@ -13,11 +15,13 @@ function App() {
           className="App-link"
           href="https://reactjs.org"
           target="_blank"
-          rel="noopener noreferrer"
-        >
+          rel="noopener noreferrer">
           Learn React
         </a>
       </header>
+      <div>
+        <LoginForm />
+      </div>
     </div>
   );
 }

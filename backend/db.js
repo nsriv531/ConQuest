@@ -1,11 +1,35 @@
-const { Pool } = require("pg");
+const { Client } = require("pg");
 
-const pool = new Pool({
-  user: "postgres", // default superuser unless you created a different one
-  host: "localhost", // or the remote IP/host of your PostgreSQL server
-  database: "postgres",
-  password: "", // the password you set during PostgreSQL installation
-  port: 5432, // default PostgreSQL port
-});
+async function getData(query) {
+  const client = new Client({
+    host: "localhost",
+    user: "postgres",
+    port: 5432,
+    password: "",
+    database: "postgres",
+  });
 
-module.exports = pool;
+  // client.query(`SELECT * FROM Users`, (err, res) => {
+  //   if (!err) {
+  //     console.log(res.rows);
+  //   } else {
+  //     console.log(err.message);
+  //   }
+  //   client.end;
+  // });
+  try {
+    await client.connect();
+    const result = await client.query(query);
+
+    return result.rows;
+  } catch (err) {
+    console.error("error", err.message);
+  } finally {
+    await client.end();
+  }
+}
+// (async () => {
+//   const query = `SELECT * FROM Users;`;
+//   const data = await getData(query);
+//   console.log(data);
+// })();
