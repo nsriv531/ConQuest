@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../StylingForms/LoginForm.css'; 
 
 function LoginForm() {
   // State to hold form data
@@ -24,7 +25,7 @@ function LoginForm() {
   };
 
   return (
-    <div>
+    <div className="login-form">
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>
         {/* Username Input */}
