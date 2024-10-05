@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { getData } from "../dbcopy";
 
 function LoginForm() {
   // State to hold form data
   const [formData, setFormData] = useState({
-    username: '',
-    password: ''
+    username: "",
+    password: "",
   });
 
   // Handle input change
@@ -17,10 +18,32 @@ function LoginForm() {
   };
 
   // Handle form submission
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     // Logic to handle form submission, such as sending data to the back-end
-    console.log('Form data submitted:', formData);
+    //console.log("Form data submitted:", formData);
+
+    try {
+      const query = "SELECT * FROM Users;";
+      const rows = await getData(query);
+
+      let match = false;
+
+      for (let i = 0; i < rows.length; i++) {
+        if (rows[i].username == formData.username) {
+          match = true;
+          break;
+        }
+      }
+
+      if (match) {
+        console.log("match found");
+      } else {
+        console.log("match not found");
+      }
+    } catch (error) {
+      console.error("error found fetching data", error);
+    }
   };
 
   return (
@@ -30,7 +53,7 @@ function LoginForm() {
         {/* Username Input */}
         <div>
           <label htmlFor="username">Username:</label>
-          <input 
+          <input
             type="text"
             id="username"
             name="username"
@@ -43,7 +66,7 @@ function LoginForm() {
         {/* Password Input */}
         <div>
           <label htmlFor="password">Password:</label>
-          <input 
+          <input
             type="password"
             id="password"
             name="password"
