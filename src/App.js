@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import LoginForm from './Forms/LoginForm';  // Adjust the path based on your folder structure
 
 function App() {
   return (
@@ -18,6 +19,10 @@ function App() {
           Learn React
         </a>
       </header>
+
+      {/* Add the LoginForm component here */}
+      <div className="App-body">
+      </div>
     </div>
   );
 }
