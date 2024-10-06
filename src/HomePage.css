@@ -1,0 +1,21 @@
+.homepage-container {
+    background-image: url('Assets/wood_background.png');  /* Relative path to the image */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;  /* Full viewport height */
+  
+    display: flex;
+    flex-direction: column;  /* Arrange components vertically */
+    justify-content: center;  /* Center components vertically */
+    align-items: flex-end;  /* Align components to the right */
+    padding-right: 20px;  /* Add some padding from the right edge */
+  }
+  
+  .homepage-container > * {
+    margin-bottom: 20px;  /* Adds space between each component */
+  }
+  
+  .homepage-container > *:last-child {
+    margin-bottom: 0;  /* Removes margin for the last component */
+  }
+  
