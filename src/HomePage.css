@@ -1,0 +1,8 @@
+/* HomePage.css */
+.homepage-container {
+    background-image: url('Assets/wood_background.png');  /* Relative path to the image */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;  /* Full viewport height */
+  }
+  
