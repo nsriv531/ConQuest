@@ -1,5 +1,5 @@
 import './App.css';
-import clouds from './Images/clouds.png';
+import clouds from './Images/clouds-brighter.png';
 import mountain from './Images/mountainsolo.png';
 
 function App() {
