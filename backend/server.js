@@ -51,6 +51,38 @@ server.post("/signup", async (req, res) => {
   }
 });
 
+server.post("/login", async (req, res) => {
+  const { username, password } = req.body;
+
+  try {
+    const sql = "SELECT * FROM users WHERE username = $1;";
+    const values = [username, password];
+
+    const userCheck = await pool.query(sql, [username]);
+    if (userCheck.rows.length === 0) {
+      return res.status(404).json({ message: "Username does not exist" });
+    }
+
+    const user = userCheck.rows[0];
+    const isMatch = await bcrypt.compare(password, user.password);
+
+    if (!isMatch) {
+      return res.status(400).json({ message: "Invalid password" });
+    }
+
+    return res.status(201).json({
+      message: "User created sucessfully",
+      user: {
+        user_id: user.user_id,
+        username: user.username,
+        email: user.email,
+      },
+    });
+  } catch (err) {
+    console.error("Error during login:", err.message);
+    res.status(500).json({ error: "Error logging in user" });
+  }
+});
 server.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 });
