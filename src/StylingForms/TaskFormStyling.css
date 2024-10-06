@@ -1,4 +1,10 @@
 /* TaskForm.css */
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400&display=swap');
+
+body {
+  font-family: 'Pixelify Sans', sans-serif;
+  color: #925634;
+}
 
 /* Container styles */
 .bg-white {
@@ -38,7 +44,6 @@
 /* Task title styles */
 .text-2xl {
   font-size: 1.75rem; /* Slightly larger for a bolder title */
-  font-family: "Cinzel", serif; /* A medieval font */
 }
 
 .font-bold {
@@ -51,10 +56,6 @@
 
 .text-center {
   text-align: center;
-}
-
-.text-gray-800 {
-  color: #4c3a32; /* A deeper, stone-like gray */
 }
 
 /* Form styles */

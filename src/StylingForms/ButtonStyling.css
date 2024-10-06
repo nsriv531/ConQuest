@@ -1,15 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400&display=swap');
+
 .medieval-logout-btn {
     background-color: #6b4226; /* Brownish color */
     color: #f4f1e9;  /* Off-white for an aged look */
     padding: 10px 20px;
-    font-size: 18px;
+    font-size: 24px;
     font-weight: bold;
     border: 3px solid #4a2e18;  /* Darker brown border */
     border-radius: 8px;
     box-shadow: 0 4px 0 #4a2e18, 0 6px 15px rgba(0, 0, 0, 0.5);  /* Shadow for depth */
     text-shadow: 1px 1px 2px #000;  /* Subtle shadow on text */
     transition: all 0.3s ease;
-    font-family: 'Cinzel', serif;  /* Medieval-inspired font */
+    font-family: 'Pixelify Sans', sans-serif;
   }
   
   .medieval-logout-btn:hover {

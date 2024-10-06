@@ -29,13 +29,15 @@ const TaskForm = () => {
 
   return (
     <div className="flex justify-end">
-      <div className="bg-white w-72 p-6 rounded-xl shadow-lg transition transform hover:scale-105 mr-10">
+      <div className="bg-white w-72 p-6 shadow-lg transition transform hover:scale-105 mr-10 border-4"style={{ border: '6px solid #6b4226', width: '500px',
+    height: '300px'}}>
+      {/* <div className="bg-white w-[800px] h-[600px] p-16 shadow-lg transition transform hover:scale-105 mr-10"> */}
         <h2 className="text-2xl font-bold mb-5 text-center text-gray-800">Task List</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           {tasks.map((task) => (
             <div
               key={task.id}
-              className="flex items-center justify-between p-3 bg-gray-50 rounded-lg shadow-sm hover:bg-gray-100 transition-colors"
+              className="flex items-center justify-between p-3 bg-gray-50 shadow-sm hover:bg-gray-100 transition-colors"
             >
               <div className="flex items-center space-x-3">
                 <input
@@ -43,7 +45,7 @@ const TaskForm = () => {
                   id={`task-${task.id}`}
                   checked={task.completed}
                   onChange={() => handleCheckboxChange(task.id)}
-                  className="form-checkbox h-6 w-6 text-indigo-600 rounded-full focus:ring focus:ring-indigo-300 transition duration-200"
+                  className="form-checkbox h-6 w-6 text-indigo-600 focus:ring focus:ring-indigo-300 transition duration-200"
                 />
                 <label
                   htmlFor={`task-${task.id}`}
