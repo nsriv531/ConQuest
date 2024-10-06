@@ -10,10 +10,12 @@ import LoginForm from './Forms/LoginForm';
 import SignUpForm from './Forms/SignUpForm';
 
 function App() {
-  const [view, setView] = useState('landing'); // 'landing' or 'login'
+  const [view, setView] = useState('landing'); // States: 'landing', 'login', or 'signup'
 
+  // Handlers to switch views
   const handleLoginClick = () => setView('login');
   const handleSignupClick = () => setView('signup');
+  const handleBackClick = () => setView('landing');
 
   return (
     <div className="App">
@@ -23,34 +25,39 @@ function App() {
       </div>
       <img src={mountain} className="mountain" alt="mountain" />
 
+      {/* Landing View */}
       {view === 'landing' && (
         <>
           <img src={notification_bar} className="notification-bar" alt="notification bar" />
           <img src={landing_banner} className="landing-banner" alt="landing banner" />
+          <div className="button-container1">
+            <div className="button-left" onClick={handleLoginClick}>
+              <div className="button-wrapper">
+                <img src={button_left} className="buttons" alt="left button" />
+              </div>
+            </div>
+            <div className="button-right" onClick={handleSignupClick}>
+              <div className="button-wrapper">
+                <img src={button_right} className="buttons" alt="right button" />
+              </div>
+            </div>
+          </div>
         </>
       )}
-      {view === 'landing' && (
-        <div className="button-container">
-          <div className="button-left" onClick={handleLoginClick}>
-            <div className="button-wrapper">
-              <img src={button_left} className="button-image" alt="left button" />
-            </div>
-          </div>
-          <div className="button-right" onClick={handleSignupClick}>
-            <div className="button-wrapper">
-              <img src={button_right} className="button-image" alt="right button" />
-            </div>
-          </div>
+
+      {/* Login View */}
+      {view === 'login' && (
+        <div className="form-container">
+          {/* Pass the handleBackClick as a prop to LoginForm */}
+          <LoginForm onBack={handleBackClick} />
         </div>
       )}
-        {view === 'login' && (
+
+      {/* Sign Up View */}
+      {view === 'signup' && (
         <div className="form-container">
-          <LoginForm />
-        </div>
-      )}
-        {view === 'signup' && (
-        <div className="form-container">
-          <SignUpForm />
+          {/* Pass the handleBackClick as a prop to SignUpForm */}
+          <SignUpForm onBack={handleBackClick} />
         </div>
       )}
     </div>

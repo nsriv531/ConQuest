@@ -70,7 +70,7 @@ body, html {
   z-index: 3;
 }
 
-.button-container {
+.button-container1 {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -83,9 +83,10 @@ body, html {
   margin-top: -20px;
 }
 
-.button-image {
+.buttons {
   width: 300px; 
   height: auto;
+  /* transform: translate(-20px, -140px); */
 }
 
 .form-container {
@@ -93,10 +94,8 @@ body, html {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /* background: rgba(255, 255, 255, 0.9); */
   padding: 30px;
   border-radius: 12px;
-  /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); */
   z-index: 5;
   width: 400px;
 }

@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import '../StylingForms/LoginForm.css'; 
+import backButtonImage from '../Assets/back_button_no_hanging.png'; // Import your back button image
+import loginButton from '../Assets/login_button_no_hanging.png';
 
-function LoginForm() {
-  // State to hold form data
+function LoginForm({ onBack }) {
   const [formData, setFormData] = useState({
     username: '',
     password: ''
   });
 
-  // Handle input change
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormData({
@@ -17,17 +17,15 @@ function LoginForm() {
     });
   };
 
-  // Handle form submission
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Logic to handle form submission, such as sending data to the back-end
     console.log('Form data submitted:', formData);
   };
 
   return (
     <div className="login-form">
       <form onSubmit={handleSubmit}>
-        {/* Username Input */}
+        <div className="form-elements">
         <div>
           <label htmlFor="username">Username:</label>
           <input 
@@ -39,8 +37,6 @@ function LoginForm() {
             required
           />
         </div>
-
-        {/* Password Input */}
         <div>
           <label htmlFor="password">Password:</label>
           <input 
@@ -52,9 +48,17 @@ function LoginForm() {
             required
           />
         </div>
+        </div>
 
-        {/* Submit Button */}
-        <button type="submit" className='button-image'></button>
+        <div className="button-container2">
+        <button type="submit" className="image-button">
+          <img src={loginButton} alt="Login" className="button-img" />
+        </button>
+        
+        <button type="button" className="image-button" onClick={onBack}>
+          <img src={backButtonImage} alt="Back" className="button-img" />
+        </button>
+      </div>
       </form>
     </div>
   );

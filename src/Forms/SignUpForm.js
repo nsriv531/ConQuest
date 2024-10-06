@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import '../StylingForms/SignUpForm.css'; 
+import '../StylingForms/SignUpForm.css';
+import backButtonImage from '../Assets/back_button_no_hanging.png'; // Import your back button image
 
-function LoginForm() {
-  // State to hold form data
+function SignUpForm({ onBack }) {
   const [formData, setFormData] = useState({
     username: '',
+    email: '',
     password: ''
   });
 
-  // Handle input change
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormData({
@@ -17,17 +17,14 @@ function LoginForm() {
     });
   };
 
-  // Handle form submission
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Logic to handle form submission, such as sending data to the back-end
     console.log('Form data submitted:', formData);
   };
 
   return (
-    <div className="login-form">
+    <div className="signup-form">
       <form onSubmit={handleSubmit}>
-        {/* Username Input */}
         <div>
           <label htmlFor="username">Username:</label>
           <input 
@@ -39,8 +36,17 @@ function LoginForm() {
             required
           />
         </div>
-
-        {/* Password Input */}
+        <div>
+          <label htmlFor="email">Email:</label>
+          <input 
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+        </div>
         <div>
           <label htmlFor="password">Password:</label>
           <input 
@@ -52,12 +58,19 @@ function LoginForm() {
             required
           />
         </div>
+        
+        {/* Back Button */}
+        <button type="button" className="image-button" onClick={onBack}>
+          <img src={backButtonImage} alt="Back" className="button-img" />
+        </button>
 
-        {/* Submit Button */}
-        <button type="submit" className='button-image'></button>
+        {/* Submit/Sign Up Button */}
+        <button type="submit" className="image-button">
+          <img src="../Assets/signup_button.png" alt="Sign Up" className="button-img" />
+        </button>
       </form>
     </div>
   );
 }
 
-export default LoginForm;
+export default SignUpForm;
