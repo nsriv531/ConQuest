@@ -5,6 +5,18 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+}
+
+.dashboard-background {
+    position: absolute; /* Position it relative to the parent */
+    top: 0;
+    left: 0;
+    width: 75%; /* Cover 75% width */
+    height: 75%; /* Cover 75% height */
+    background: url('../Assets/dashboard_board.png') no-repeat center center;
+    background-size: cover; /* Scale the image to fit */
+    /* z-index: -1; */
 }
   
 .dashboard-title {
@@ -43,3 +55,4 @@
 .plus-button:hover {
     background-color: #873600;
 }
+
