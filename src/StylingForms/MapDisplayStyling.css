@@ -1,0 +1,22 @@
+.map-section {
+    flex: 2;  /* Increase the size ratio of the map section */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 20px;
+  }
+  
+  .map-image {
+    width: 90%;  /* Adjust the size as necessary */
+    height: auto;  /* Maintain aspect ratio */
+    object-fit: contain;  /* Ensure the image fits within the container */
+    max-height: 80vh;  /* Control max height for responsiveness */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;  /* Smooth transition */
+  }
+  
+  /* Hover effect */
+  .map-image:hover {
+    transform: scale(1.05);  /* Slight zoom effect */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);  /* Add shadow for depth */
+  }
+  

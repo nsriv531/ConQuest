@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400&display=swap');
+
+h1, span {
+  font-family: 'Pixelify Sans', sans-serif;
+  color: #925634;
+}
+
+.dashboard-container {
+    background-color: rgba(255, 255, 255, 0); /* Transparent background */
+    padding: 20px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.dashboard-background {
+    position: absolute; /* Position it relative to the parent */
+    top: 0;
+    left: 0;
+    width: 75%; /* Cover 75% width */
+    height: 75%; /* Cover 75% height */
+    background: url('../Assets/dashboard_board.png');
+    background-size: cover; /* Scale the image to fit */
+    /* z-index: -1; */
+}
+  
+.dashboard-title {
+    color: white;
+    text-align: center;
+    font-size: 60px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px #000;
+}
+  
+.dashboard-projects {
+    display: flex;
+    justify-content: space-between;
+    /* width: 80%; */
+    /* max-width: 1000px; */
+    margin-top: 20px;
+}
+  
+.plus-button {
+    background-color: #b5651d;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'PixelFont', sans-serif;
+    color: white;
+    font-size: 36px;
+    border: 3px solid #873600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+  
+.plus-button:hover {
+    background-color: #873600;
+}
+
