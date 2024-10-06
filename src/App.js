@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import logo from "./logo.svg";
 //import "./App.css";
 
-import LoginForm from "./components/LoginForm";
-import SignUpForm from "./components/SignUpForm";
+import LoginForm from "./Forms/LoginForm";
+import SignUpForm from "./Forms/SignUpForm";
 
 function App() {
   const [users, setUsers] = useState([]);
