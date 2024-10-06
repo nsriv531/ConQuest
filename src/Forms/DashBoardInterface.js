@@ -1,15 +1,19 @@
 import React from 'react';
-import ProjectMapButton from './ProjectIcon'; // Import the CSS for styling
-import  '../StylingForms/Dashboard.css'; // Import the ProjectMapButton component
+import ProjectMapButton from './ProjectIcon'; // Import the ProjectMapButton component
+import '../StylingForms/Dashboard.css'; // Import the CSS for styling
 
-const DashBoardInterface = ({ projects }) => {
+const DashBoardInterface = ({ projects, onBackToHome }) => {
   return (
     <div className="dashboard-container">
       <h1 className="dashboard-title">My Dashboard</h1>
       <div className="dashboard-projects">
         {/* Render each ProjectMapButton component */}
         {projects.map((project, index) => (
-          <ProjectMapButton key={index} projectName={project.name} />
+          <ProjectMapButton
+            key={index}
+            projectName={project.name}
+            onClick={index === 0 ? onBackToHome : undefined} 
+          />
         ))}
 
         {/* Render the plus button */}

@@ -8,8 +8,6 @@ import ProjectIcon from './Forms/ProjectIcon';
 import DashBoardInterface from './Forms/DashBoardInterface';
 import GoToDashboard from './Forms/GoToDashboard';
 import MapDisplay from './Forms/MapDisplay';
-import App from './LandingPage'; // Your landing page
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function HomePage() {
   // State to track whether the dashboard is visible or not
@@ -20,12 +18,17 @@ function HomePage() {
     setShowDashboard(true);
   };
 
+  // Function to return back to the home page from the dashboard
+  const handleBackToHome = () => {
+    setShowDashboard(false);
+  };
+
   return (
     <div className="homepage-container">
       <div className="content-wrapper">
         {/* Conditionally render components based on the state */}
         {showDashboard ? (
-          <DashBoardInterface />
+          <DashBoardInterface onBackToHome={handleBackToHome} />
         ) : (
           <div className="layout">
             <div className="map-section">
