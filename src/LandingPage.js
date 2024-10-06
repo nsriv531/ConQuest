@@ -2,16 +2,14 @@ import React, { useState } from 'react';
 import './LandingPage.css';
 import clouds from './Images/clouds-brighter.png';
 import mountain from './Images/mountainsolo.png';
-import notification_bar from './Assets/notification bar.png';
+import notification_bar from './Assets/notification_text.png';
 import landing_banner from './Assets/conQuest_logo_with_banner.png';
-import button_left from './Assets/button_left.png';
-import button_right from './Assets/button_right.png';
+import button_left from './Assets/login_button.png';
+import button_right from './Assets/signup_button.png';
 
 function App() {
-  // State to track which view is active
   const [view, setView] = useState('landing'); // 'landing' or 'login'
 
-  // Function to switch to the login view (removes specific components)
   const handleLoginClick = () => setView('login');
 
   return (
@@ -33,13 +31,11 @@ function App() {
           <div className="button-left" onClick={handleLoginClick}>
             <div className="button-wrapper">
               <img src={button_left} className="button-image" alt="left button" />
-              <span className="button-text">LOG IN</span>
             </div>
           </div>
           <div className="button-right">
             <div className="button-wrapper">
               <img src={button_right} className="button-image" alt="right button" />
-              <span className="button-text">SIGN UP</span>
             </div>
           </div>
         </div>
