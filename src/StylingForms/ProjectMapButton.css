@@ -1,0 +1,37 @@
+.map-button {
+  background-color: #f5deb3;  /* Light wheat color for map feel */
+  border: 3px solid #8b4513;  /* Dark brown border */
+  border-radius: 10px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 150px;
+  height: 150px; /* A square map-like shape */
+}
+
+.map-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.map-icon {
+  width: 50px;
+  height: 50px;
+  background-color: #d2b48c; /* Sand-like background */
+  border: 2px solid #8b4513;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.map-title {
+  font-size: 18px;
+  color: #4b3621;
+  font-weight: bold;
+  text-align: center;
+  font-family: 'Cinzel', serif;  /* Medieval-inspired font */
+}
