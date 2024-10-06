@@ -57,6 +57,7 @@ body, html {
   height: 75px;
   object-fit: contain;
   z-index: 2;
+  margin-top: 20px;
 }
 
 .landing-banner {
@@ -79,10 +80,10 @@ body, html {
   width: 80%;
   z-index: 2;
   gap: 50px;
+  margin-top: -20px;
 }
 
-.button-left,
-.button-right {
-  width: 20%;
+.button-image {
+  width: 300px; 
   height: auto;
 }
