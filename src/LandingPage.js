@@ -55,7 +55,7 @@ function App() {
 
       {/* Sign Up View */}
       {view === 'signup' && (
-        <div className="form-container">
+        <div className="form-container2">
           {/* Pass the handleBackClick as a prop to SignUpForm */}
           <SignUpForm onBack={handleBackClick} />
         </div>

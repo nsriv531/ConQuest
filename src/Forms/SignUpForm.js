@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import '../StylingForms/SignUpForm.css';
-import backButtonImage from '../Assets/back_button_no_hanging.png'; // Import your back button image
+import backButtonImage from '../Assets/back_button_no_hanging.png';
+import continueButton from '../Assets/continue_button_no_hanging.png';
 
 function SignUpForm({ onBack }) {
   const [formData, setFormData] = useState({
-    username: '',
     email: '',
-    password: ''
+    displayName: '',
+    password: '',
+    confirmPassword: ''
   });
 
   const handleChange = (event) => {
@@ -25,17 +27,7 @@ function SignUpForm({ onBack }) {
   return (
     <div className="signup-form">
       <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="username">Username:</label>
-          <input 
-            type="text"
-            id="username"
-            name="username"
-            value={formData.username}
-            onChange={handleChange}
-            required
-          />
-        </div>
+      <div className="form-elements2">
         <div>
           <label htmlFor="email">Email:</label>
           <input 
@@ -47,6 +39,19 @@ function SignUpForm({ onBack }) {
             required
           />
         </div>
+
+        <div>
+          <label htmlFor="displayName">Display Name:</label>
+          <input 
+            type="text"
+            id="displayName"
+            name="displayName"
+            value={formData.displayName}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
         <div>
           <label htmlFor="password">Password:</label>
           <input 
@@ -58,16 +63,29 @@ function SignUpForm({ onBack }) {
             required
           />
         </div>
-        
-        {/* Back Button */}
-        <button type="button" className="image-button" onClick={onBack}>
-          <img src={backButtonImage} alt="Back" className="button-img" />
+        </div>
+
+        <div>
+          <label htmlFor="confirmPassword">Confirm Password:</label>
+          <input 
+            type="password"
+            id="confirmPassword"
+            name="confirmPassword"
+            value={formData.confirmPassword}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        <div className="button-container3">
+        <button type="submit" className="image-button">
+          <img src={continueButton} alt="Sign Up" className="button-img2" />
         </button>
 
-        {/* Submit/Sign Up Button */}
-        <button type="submit" className="image-button">
-          <img src="../Assets/signup_button.png" alt="Sign Up" className="button-img" />
+        <button type="button" className="image-button" onClick={onBack}>
+          <img src={backButtonImage} alt="Back" className="button-img2" />
         </button>
+        </div>
       </form>
     </div>
   );
