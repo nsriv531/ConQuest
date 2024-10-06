@@ -1,27 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400&display=swap');
 
 .medieval-logout-btn {
-    background-color: #6b4226; /* Brownish color */
-    color: #f4f1e9;  /* Off-white for an aged look */
+    background-color: #6b4226;
+    color: #f4f1e9; 
     padding: 10px 20px;
-    font-size: 24px;
+    font-size: 18px;
     font-weight: bold;
-    border: 3px solid #4a2e18;  /* Darker brown border */
+    border: 3px solid #4a2e18; 
     border-radius: 8px;
-    box-shadow: 0 4px 0 #4a2e18, 0 6px 15px rgba(0, 0, 0, 0.5);  /* Shadow for depth */
-    text-shadow: 1px 1px 2px #000;  /* Subtle shadow on text */
+    box-shadow: 0 4px 0 #4a2e18, 0 6px 15px rgba(0, 0, 0, 0.5);
+    text-shadow: 1px 1px 2px #000; 
     transition: all 0.3s ease;
     font-family: 'Pixelify Sans', sans-serif;
+    display: block;
+    margin: 0 auto;
+    text-align: center; 
+    margin: 0 auto 10px auto;
   }
   
   .medieval-logout-btn:hover {
-    background-color: #7c5631;  /* Lighter brown on hover */
-    transform: translateY(-2px);  /* Slight "lift" on hover */
+    background-color: #7c5631;
+    transform: translateY(-2px);
   }
   
   .medieval-logout-btn:active {
-    background-color: #5e371c;  /* Darker brown when pressed */
-    box-shadow: 0 2px 0 #4a2e18, 0 3px 7px rgba(0, 0, 0, 0.5);  /* Adjust shadow */
-    transform: translateY(1px);  /* Button presses down slightly */
+    background-color: #5e371c;
+    box-shadow: 0 2px 0 #4a2e18, 0 3px 7px rgba(0, 0, 0, 0.5); 
+    transform: translateY(1px);
   }
   

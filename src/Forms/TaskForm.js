@@ -45,7 +45,7 @@ const TaskForm = () => {
                   id={`task-${task.id}`}
                   checked={task.completed}
                   onChange={() => handleCheckboxChange(task.id)}
-                  className="form-checkbox h-6 w-6 text-indigo-600 focus:ring focus:ring-indigo-300 transition duration-200"
+                  className="form-checkbox h-8 w-8 text-indigo-600 focus:ring focus:ring-indigo-300 transition duration-200"
                 />
                 <label
                   htmlFor={`task-${task.id}`}
