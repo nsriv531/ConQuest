@@ -54,12 +54,12 @@ const TaskForm = () => {
               </div>
             </div>
           ))}
-          <button
+          {/* <button
             type="submit"
             className="w-full bg-indigo-600 text-white py-3 rounded-lg hover:bg-indigo-500 transition-colors font-semibold"
           >
             Submit
-          </button>
+          </button> */}
         </form>
       </div>
     </div>

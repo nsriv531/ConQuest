@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400&display=swap');
+
+h1, span {
+  font-family: 'Pixelify Sans', sans-serif;
+  color: #925634;
+}
+
 .dashboard-container {
     background-color: rgba(255, 255, 255, 0); /* Transparent background */
     padding: 20px;
@@ -14,31 +21,30 @@
     left: 0;
     width: 75%; /* Cover 75% width */
     height: 75%; /* Cover 75% height */
-    background: url('../Assets/dashboard_board.png') no-repeat center center;
+    background: url('../Assets/dashboard_board.png');
     background-size: cover; /* Scale the image to fit */
     /* z-index: -1; */
 }
   
 .dashboard-title {
-    font-family: 'PixelFont', sans-serif;
     color: white;
     text-align: center;
-    font-size: 36px;
-    margin-bottom: 30px;
+    font-size: 60px;
+    margin-bottom: 20px;
     text-shadow: 2px 2px #000;
 }
   
 .dashboard-projects {
     display: flex;
     justify-content: space-between;
-    width: 80%;
-    max-width: 1000px;
+    /* width: 80%; */
+    /* max-width: 1000px; */
     margin-top: 20px;
 }
   
 .plus-button {
     background-color: #b5651d;
-    width: 150px;
+    width: 100px;
     height: 100px;
     display: flex;
     justify-content: center;
