@@ -24,7 +24,7 @@ const DashBoardInterface = ({ projects }) => {
 // Default props to populate with some initial data
 DashBoardInterface.defaultProps = {
   projects: [
-    { name: 'Project 1' },
+    { name: 'My Research Paper' },
     { name: 'Project 2' },
     { name: 'Project 3' },
     { name: 'Project 4' },
