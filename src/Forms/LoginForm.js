@@ -26,7 +26,6 @@ function LoginForm() {
 
   return (
     <div className="login-form">
-      <h2>Login</h2>
       <form onSubmit={handleSubmit}>
         {/* Username Input */}
         <div>
@@ -55,7 +54,7 @@ function LoginForm() {
         </div>
 
         {/* Submit Button */}
-        <button type="submit">Login</button>
+        <button type="submit" className='button-image'></button>
       </form>
     </div>
   );

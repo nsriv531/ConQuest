@@ -1,69 +1,100 @@
-/* Overall container for the login form */
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400&display=swap');
+
+.login-form label, .login-form input, .login-form textarea, .login-form button {
+  font-family: 'Pixelify Sans', sans-serif;
+  color: #925634;
+}
+
 .login-form {
     max-width: 400px;
-    margin: 50px auto; /* Add some spacing at the top */
+    margin: 50px auto;
     padding: 30px;
-    background: linear-gradient(135deg, #f4f4f4, #ffffff); /* Add a gradient background */
-    border-radius: 12px; /* Smoother border */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
-    transition: box-shadow 0.3s ease-in-out; /* Smooth transition for hover effects */
+    border-radius: 12px;
+    transition: box-shadow 0.3s ease-in-out;
+    margin: 100px auto;
+    transform: translateX(-20px); /* Move the form 20px to the left */
   }
+
+  /* .login-form label, .login-form input, .login-form textarea, .login-form button {
+    margin-top: 15px;
+  } */
+
+  .form-container {
+    background-image: url('../Assets/login_form.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 400px;
+    height: auto;
   
-  /* Adding hover effect to the form container */
-  .login-form:hover {
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
   }
+
+.login-form label {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
   
-  /* Input and textarea fields styling */
   .login-form input, .login-form textarea {
     width: 100%;
     padding: 12px;
     margin: 15px 0;
-    border: 1px solid #ddd; /* Subtle border */
-    border-radius: 6px; /* Rounded corners */
-    font-size: 16px; /* Increase font size */
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle inner shadow */
-    transition: border-color 0.3s ease; /* Smooth border color change */
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+    background-color: #F2DCB4;
+    border: 1px solid #C9B28D;
+    box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.3), /* Subtle inner shadow */
+    inset -1px -1px 2px rgba(255, 255, 255, 0.2); /* Softer highlight */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
   }
   
   /* Focus effect on input fields */
   .login-form input:focus, .login-form textarea:focus {
-    border-color: #007bff; /* Blue border on focus */
-    outline: none; /* Remove default focus outline */
-    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2); /* Add glow effect on focus */
+    border-color: #007bff;
+    outline: none;
+
   }
   
-  /* Button styling */
   .login-form button {
     width: 100%;
     padding: 12px;
-    background-color: #007bff; /* Primary blue color */
+    background-color: #007bff;
     color: white;
     border: none;
-    border-radius: 6px; /* Rounded button */
-    font-size: 18px; /* Larger button text */
-    font-weight: bold; /* Bold button text */
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition for hover */
+    transition: background-color 0.3s ease, transform 0.2s ease;
   }
   
-  /* Hover effect for the button */
   .login-form button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-    transform: translateY(-3px); /* Lift button slightly on hover */
+    background-color: #0056b3;
+    transform: translateY(-3px);
   }
   
-  /* Active state for button click */
   .login-form button:active {
-    transform: translateY(0); /* Reset lift on click */
-    background-color: #004494; /* Even darker blue when clicked */
+    transform: translateY(0);
+    background-color: #004494;
   }
   
-  /* Responsive design: make it look good on smaller screens */
   @media (max-width: 768px) {
     .login-form {
       max-width: 90%;
       padding: 20px;
     }
+  }
+  
+  .button-image {
+      /* background-image: url('../Assets/login_button.png'); */
+      /* background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 200px;
+      height: 60px;
+      border: none;
+      cursor: pointer; */
   }
   

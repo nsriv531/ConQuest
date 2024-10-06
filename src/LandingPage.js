@@ -6,6 +6,7 @@ import notification_bar from './Assets/notification_text.png';
 import landing_banner from './Assets/conQuest_logo_with_banner.png';
 import button_left from './Assets/login_button.png';
 import button_right from './Assets/signup_button.png';
+import LoginForm from './Forms/LoginForm';
 
 function App() {
   const [view, setView] = useState('landing'); // 'landing' or 'login'
@@ -38,6 +39,11 @@ function App() {
               <img src={button_right} className="button-image" alt="right button" />
             </div>
           </div>
+        </div>
+      )}
+        {view === 'login' && (
+        <div className="form-container">
+          <LoginForm />
         </div>
       )}
     </div>
