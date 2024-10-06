@@ -1,48 +1,63 @@
-const express = require('express');
-const { Pool } = require('pg'); // PostgreSQL client for Node.js
-const bcrypt = require('bcrypt'); // For password hashing
-const app = express();
+import React, { useState } from 'react';
+import '../StylingForms/SignUpForm.css'; 
 
-app.use(express.json()); // To parse JSON
+function LoginForm() {
+  // State to hold form data
+  const [formData, setFormData] = useState({
+    username: '',
+    password: ''
+  });
 
-// PostgreSQL connection pool
-const pool = new Pool({
-  user: 'your-username',
-  host: 'localhost',
-  database: 'your-database',
-  password: 'your-password',
-  port: 5432,
-});
+  // Handle input change
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
 
-// API route for user sign-up
-app.post('/api/signup', async (req, res) => {
-  const { username, password, bio, urlImage } = req.body; // Only the fields we need
+  // Handle form submission
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // Logic to handle form submission, such as sending data to the back-end
+    console.log('Form data submitted:', formData);
+  };
 
-  try {
-    // Hash the password before storing it in the database
-    const hashedPassword = await bcrypt.hash(password, 10);
+  return (
+    <div className="login-form">
+      <form onSubmit={handleSubmit}>
+        {/* Username Input */}
+        <div>
+          <label htmlFor="username">Username:</label>
+          <input 
+            type="text"
+            id="username"
+            name="username"
+            value={formData.username}
+            onChange={handleChange}
+            required
+          />
+        </div>
 
-    // Insert the user into the PostgreSQL database
-    const insertUserQuery = `
-      INSERT INTO users (username, password, bio, url_image)
-      VALUES ($1, $2, $3, $4) RETURNING id
-    `;
-    
-    // Execute the query with the actual data
-    const result = await pool.query(insertUserQuery, [username, hashedPassword, bio, urlImage]);
+        {/* Password Input */}
+        <div>
+          <label htmlFor="password">Password:</label>
+          <input 
+            type="password"
+            id="password"
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
+            required
+          />
+        </div>
 
-    // Retrieve the new user's ID
-    const userId = result.rows[0].id;
+        {/* Submit Button */}
+        <button type="submit" className='button-image'></button>
+      </form>
+    </div>
+  );
+}
 
-    // Respond with success message
-    res.status(201).json({ message: 'User created successfully', userId });
-  } catch (error) {
-    console.error('Error inserting user:', error);
-    res.status(500).json({ message: 'Internal server error' });
-  }
-});
-
-// Start the server
-app.listen(3001, () => {
-  console.log('Server running on port 3001');
-});
+export default LoginForm;

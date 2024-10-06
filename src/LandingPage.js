@@ -7,11 +7,13 @@ import landing_banner from './Assets/conQuest_logo_with_banner.png';
 import button_left from './Assets/login_button.png';
 import button_right from './Assets/signup_button.png';
 import LoginForm from './Forms/LoginForm';
+import SignUpForm from './Forms/SignUpForm';
 
 function App() {
   const [view, setView] = useState('landing'); // 'landing' or 'login'
 
   const handleLoginClick = () => setView('login');
+  const handleSignupClick = () => setView('signup');
 
   return (
     <div className="App">
@@ -34,7 +36,7 @@ function App() {
               <img src={button_left} className="button-image" alt="left button" />
             </div>
           </div>
-          <div className="button-right">
+          <div className="button-right" onClick={handleSignupClick}>
             <div className="button-wrapper">
               <img src={button_right} className="button-image" alt="right button" />
             </div>
@@ -44,6 +46,11 @@ function App() {
         {view === 'login' && (
         <div className="form-container">
           <LoginForm />
+        </div>
+      )}
+        {view === 'signup' && (
+        <div className="form-container">
+          <SignUpForm />
         </div>
       )}
     </div>
