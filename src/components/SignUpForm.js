@@ -1,53 +1,104 @@
-const express = require("express");
-const { Pool } = require("pg"); // PostgreSQL client for Node.js
-const bcrypt = require("bcrypt"); // For password hashing
-const app = express();
+import React, { useState } from "react";
 
-app.use(express.json()); // To parse JSON
+function SignUpForm() {
+  const [formData, setFormData] = useState({
+    username: "",
+    email: "",
+    password: "",
+  });
 
-// PostgreSQL connection pool
-const pool = new Pool({
-  user: "your-username",
-  host: "localhost",
-  database: "your-database",
-  password: "your-password",
-  port: 5432,
-});
+  const [message, setMessage] = useState("");
+  const [isSuccess, setIsSuccess] = useState(null); // State to track if the response was successful
 
-// API route for user sign-up
-app.post("/api/signup", async (req, res) => {
-  const { username, password, bio, urlImage } = req.body; // Only the fields we need
+  // Handle input change
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
 
-  try {
-    // Hash the password before storing it in the database
-    const hashedPassword = await bcrypt.hash(password, 10);
+  // Handle form submission
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    // Logic to handle form submission, such as sending data to the back-end
+    console.log("Form data submitted:", formData);
 
-    // Insert the user into the PostgreSQL database
-    const insertUserQuery = `
-      INSERT INTO users (username, password, bio, url_image)
-      VALUES ($1, $2, $3, $4) RETURNING id
-    `;
+    try {
+      const response = await fetch("http://localhost:3001/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-    // Execute the query with the actual data
-    const result = await pool.query(insertUserQuery, [
-      username,
-      hashedPassword,
-      bio,
-      urlImage,
-    ]);
+      const data = await response.json();
 
-    // Retrieve the new user's ID
-    const userId = result.rows[0].id;
+      if (response.ok) {
+        setIsSuccess(true); // Set success state
+        setMessage(data.message); // Set the success message
+      } else {
+        setIsSuccess(false); // Set error state
+        setMessage(data.message); // Set the error message from the server response
+      }
+    } catch (error) {
+      setMessage("An error occurred. Please try again.");
+      console.error("Error during sign-up:", error);
+    }
+  };
 
-    // Respond with success message
-    res.status(201).json({ message: "User created successfully", userId });
-  } catch (error) {
-    console.error("Error inserting user:", error);
-    res.status(500).json({ message: "Internal server error" });
-  }
-});
+  return (
+    <div className="signup-form">
+      <h2>Sign Up</h2>
+      <form onSubmit={handleSubmit}>
+        {/* Username Input */}
+        {message && (
+          <p style={{ color: isSuccess ? "green" : "red" }}>{message}</p>
+        )}
 
-// Start the server
-app.listen(3001, () => {
-  console.log("Server running on port 3001");
-});
+        <div>
+          <label htmlFor="username">Username:</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            value={formData.username}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        <div>
+          <label htmlFor="password">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        {/* Password Input */}
+        <div>
+          <label htmlFor="password">Password:</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        {/* Submit Button */}
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
+  );
+}
+export default SignUpForm;

@@ -1,22 +1,25 @@
-import React, { useEffect, useState } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import logo from "./logo.svg";
+//import "./App.css";
+
+import LoginForm from "./components/LoginForm";
+import SignUpForm from "./components/SignUpForm";
 
 function App() {
   const [users, setUsers] = useState([]);
 
   // Fetch data from the backend when the component mounts
   useEffect(() => {
-    fetch('http://localhost:3001/users') // Fetching from your backend
+    fetch("http://localhost:3001/users") // Fetching from your backend
       .then((response) => response.json())
       .then((data) => setUsers(data))
-      .catch((error) => console.error('Error fetching users:', error));
+      .catch((error) => console.error("Error fetching users:", error));
   }, []);
 
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        {/* <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
@@ -24,13 +27,14 @@ function App() {
           className="App-link"
           href="https://reactjs.org"
           target="_blank"
-          rel="noopener noreferrer"
-        >
+          rel="noopener noreferrer">
           Learn React
-        </a>
+        </a> */}
       </header>
 
       <div>
+        {/* <LoginForm /> */}
+        <SignUpForm />
       </div>
 
       <div>

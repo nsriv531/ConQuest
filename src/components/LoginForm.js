@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "../StylingForms/LoginForm.css";
 
 function LoginForm() {
   // State to hold form data
