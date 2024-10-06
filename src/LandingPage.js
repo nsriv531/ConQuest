@@ -1,4 +1,4 @@
-import './App.css';
+import './LandingPage.css';
 import clouds from './Images/clouds-brighter.png';
 import mountain from './Images/mountainsolo.png';
 
@@ -10,7 +10,7 @@ function App() {
         <img src={clouds} className="clouds-dupe" alt="clouds" />
       </div>
       <img src={mountain} className="mountain" alt="mountain" />
-    </div>
+      </div>
   );
 }
 
