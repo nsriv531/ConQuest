@@ -1,0 +1,15 @@
+.map-section {
+    flex: 2;  /* Increase the size ratio of the map section */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 20px;
+  }
+  
+  .map-image {
+    width: 90%;  /* Adjust the size as necessary */
+    height: auto;  /* Maintain aspect ratio */
+    object-fit: contain;  /* Ensure the image fits within the container */
+    max-height: 80vh;  /* Control max height for responsiveness */
+  }
+  
