@@ -1,0 +1,25 @@
+.medieval-logout-btn {
+    background-color: #6b4226; /* Brownish color */
+    color: #f4f1e9;  /* Off-white for an aged look */
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border: 3px solid #4a2e18;  /* Darker brown border */
+    border-radius: 8px;
+    box-shadow: 0 4px 0 #4a2e18, 0 6px 15px rgba(0, 0, 0, 0.5);  /* Shadow for depth */
+    text-shadow: 1px 1px 2px #000;  /* Subtle shadow on text */
+    transition: all 0.3s ease;
+    font-family: 'Cinzel', serif;  /* Medieval-inspired font */
+  }
+  
+  .medieval-logout-btn:hover {
+    background-color: #7c5631;  /* Lighter brown on hover */
+    transform: translateY(-2px);  /* Slight "lift" on hover */
+  }
+  
+  .medieval-logout-btn:active {
+    background-color: #5e371c;  /* Darker brown when pressed */
+    box-shadow: 0 2px 0 #4a2e18, 0 3px 7px rgba(0, 0, 0, 0.5);  /* Adjust shadow */
+    transform: translateY(1px);  /* Button presses down slightly */
+  }
+  

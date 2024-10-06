@@ -1,0 +1,105 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.App {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* for the cloud images to sit side by side */
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400%;
+  height: 150%; 
+  z-index: 0;
+  display: flex;
+  animation: scroll 60s linear infinite; /* to scroll the clouds infinately */
+}
+
+.clouds-background, .clouds-dupe {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mountain {
+  position: absolute; 
+  top: -100px;
+  left: 0;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  z-index: 1;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.notification-bar {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%; 
+  height: 75px;
+  object-fit: contain;
+  z-index: 2;
+  margin-top: 20px;
+}
+
+.landing-banner {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-48%, -50%);
+  width: 80%;
+  height: auto;
+  z-index: 3;
+}
+
+.button-container1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  z-index: 2;
+  gap: 50px;
+  margin-top: -20px;
+}
+
+.buttons {
+  width: 300px; 
+  height: auto;
+  /* transform: translate(-20px, -140px); */
+}
+
+.form-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 30px;
+  border-radius: 12px;
+  z-index: 5;
+  width: 400px;
+}
+
+.form-container h2 {
+  margin-top: 0;
+}
