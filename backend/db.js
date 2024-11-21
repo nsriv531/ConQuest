@@ -1,11 +1,11 @@
 const { Pool } = require("pg");
 
 const pool = new Pool({
-  user: "postgres", // default superuser unless you created a different one
-  host: "localhost", // or the remote IP/host of your PostgreSQL server
+  host: "localhost",
+  user: "postgres",
+  port: 5432,
+  password: "", // Add your database password here
   database: "postgres",
-  password: "", // the password you set during PostgreSQL installation
-  port: 5432, // default PostgreSQL port
 });
 
 module.exports = pool;
